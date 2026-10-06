@@ -10,14 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Initialize Countdown Timer
   initCountdown();
 
-  // 3. Initialize Live Dhaka Time Clock (BST, UTC+6)
-  initDhakaClock();
-
-  // 4. Initialize Forms & Modals
-  initFormsAndModals();
-
-  // 5. Initialize Quick Actions & Toasts
-  initQuickActions();
+  // 3. Initialize Subscribe Notification Form
+  initSubscribeForm();
 });
 
 /* ==========================================================================
@@ -36,7 +30,7 @@ function initParticles() {
     height = canvas.height = window.innerHeight;
   });
 
-  const particleCount = Math.min(Math.floor(window.innerWidth / 22), 65);
+  const particleCount = Math.min(Math.floor(window.innerWidth / 20), 70);
   const particles = [];
 
   for (let i = 0; i < particleCount; i++) {
@@ -64,7 +58,7 @@ function initParticles() {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          const alpha = (1 - dist / 130) * 0.15;
+          const alpha = (1 - dist / 130) * 0.16;
           ctx.strokeStyle = `rgba(99, 102, 241, ${alpha})`;
           ctx.lineWidth = 0.8;
           ctx.stroke();
@@ -105,12 +99,12 @@ function initCountdown() {
 
   if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
 
-  // Set target date: 14 days from initial load (saved in localStorage for persistence)
+  // Target date: 14 days out, persisted in localStorage
   let targetTime = localStorage.getItem('smart_solution_target_launch');
   if (!targetTime) {
     const launchDate = new Date();
     launchDate.setDate(launchDate.getDate() + 14);
-    launchDate.setHours(10, 0, 0, 0);
+    launchDate.setHours(12, 0, 0, 0);
     targetTime = launchDate.getTime();
     localStorage.setItem('smart_solution_target_launch', targetTime);
   } else {
@@ -122,7 +116,7 @@ function initCountdown() {
     let difference = targetTime - now;
 
     if (difference <= 0) {
-      difference = 3600 * 24 * 7 * 1000; // Reset if expired for demo
+      difference = 3600 * 24 * 7 * 1000;
     }
 
     const days = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -141,70 +135,44 @@ function initCountdown() {
 }
 
 /* ==========================================================================
-   LIVE DHAKA SERVER CLOCK (BST, UTC+6)
+   SUBSCRIBE NOTIFICATION FORM
    ========================================================================== */
-function initDhakaClock() {
-  const clockEl = document.getElementById('live-server-clock');
-  if (!clockEl) return;
-
-  function updateClock() {
-    const options = {
-      timeZone: 'Asia/Dhaka',
-      hour12: true,
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit'
-    };
-    const formatter = new Intl.DateTimeFormat('en-US', options);
-    clockEl.textContent = formatter.format(new Date()) + ' BST';
-  }
-
-  updateClock();
-  setInterval(updateClock, 1000);
-}
-
-/* ==========================================================================
-   FORMS & MODAL BEHAVIOR
-   ========================================================================== */
-function initFormsAndModals() {
-  // Subscribe Form
+function initSubscribeForm() {
   const subForm = document.getElementById('subscribe-form');
   const emailInput = document.getElementById('email-input');
   const subBtn = document.getElementById('subscribe-btn');
   const formFeedback = document.getElementById('form-feedback');
 
-  if (subForm && emailInput && subBtn) {
-    subForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = emailInput.value.trim();
+  if (!subForm || !emailInput || !subBtn) return;
 
-      if (!email || !email.includes('@')) {
-        showFeedback(formFeedback, 'Please enter a valid email address.', 'error');
-        return;
+  subForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = emailInput.value.trim();
+
+    if (!email || !email.includes('@')) {
+      showFeedback(formFeedback, 'Please enter a valid email address.', 'error');
+      return;
+    }
+
+    const originalText = subBtn.innerHTML;
+    subBtn.disabled = true;
+    subBtn.innerHTML = '<span>Saving...</span>';
+
+    setTimeout(() => {
+      const subscribers = JSON.parse(localStorage.getItem('smart_subscribers') || '[]');
+      if (!subscribers.includes(email)) {
+        subscribers.push(email);
+        localStorage.setItem('smart_subscribers', JSON.stringify(subscribers));
       }
 
-      // Simulate loading state
-      const originalText = subBtn.innerHTML;
-      subBtn.disabled = true;
-      subBtn.innerHTML = '<span>Saving...</span>';
+      subBtn.disabled = false;
+      subBtn.innerHTML = originalText;
+      emailInput.value = '';
 
-      setTimeout(() => {
-        // Save to localStorage list
-        const subscribers = JSON.parse(localStorage.getItem('smart_subscribers') || '[]');
-        if (!subscribers.includes(email)) {
-          subscribers.push(email);
-          localStorage.setItem('smart_subscribers', JSON.stringify(subscribers));
-        }
-
-        subBtn.disabled = false;
-        subBtn.innerHTML = originalText;
-        emailInput.value = '';
-
-        showFeedback(formFeedback, '🎉 Priority Access Confirmed! We will notify you when we go live.', 'success');
-        showToast('Success! You are on our launch notification list.', 'toast-success');
-      }, 700);
-    });
-  }
+      showFeedback(formFeedback, '🎉 Priority Access Confirmed! We will notify you when we go live.', 'success');
+      showToast('Success! You are on our launch notification list.');
+    }, 600);
+  });
 
   function showFeedback(element, msg, type) {
     if (!element) return;
@@ -215,93 +183,17 @@ function initFormsAndModals() {
       element.className = 'form-feedback';
     }, 6000);
   }
-
-  // Inquiry Modal Logic
-  const modal = document.getElementById('inquiry-modal');
-  const openBtn = document.getElementById('btn-open-inquiry');
-  const launchBox = document.getElementById('launch-inquiry-box');
-  const closeBtn = document.getElementById('modal-close');
-  const cancelBtn = document.getElementById('modal-cancel');
-  const inquiryForm = document.getElementById('inquiry-form');
-
-  function openModal() {
-    if (!modal) return;
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden', 'false');
-    const firstInput = document.getElementById('inq-name');
-    if (firstInput) setTimeout(() => firstInput.focus(), 100);
-  }
-
-  function closeModal() {
-    if (!modal) return;
-    modal.classList.remove('open');
-    modal.setAttribute('aria-hidden', 'true');
-  }
-
-  if (openBtn) openBtn.addEventListener('click', openModal);
-  if (launchBox) launchBox.addEventListener('click', openModal);
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-  if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
-
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
-  }
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal && modal.classList.contains('open')) {
-      closeModal();
-    }
-  });
-
-  // Inquiry Form Submission
-  if (inquiryForm) {
-    inquiryForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const submitBtn = document.getElementById('modal-submit-btn');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Transmitting...';
-      submitBtn.disabled = true;
-
-      setTimeout(() => {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        inquiryForm.reset();
-        closeModal();
-        showToast('Inquiry received! Our team will reach you within 2 hours.', 'toast-success');
-      }, 800);
-    });
-  }
 }
 
-/* ==========================================================================
-   QUICK ACTIONS & TOAST MESSAGING
-   ========================================================================== */
-function initQuickActions() {
-  // Copy Email Button
-  const copyBtn = document.getElementById('btn-copy-email');
-  if (copyBtn) {
-    copyBtn.addEventListener('click', () => {
-      const email = 'info@smart-solutionbd.com';
-      navigator.clipboard.writeText(email).then(() => {
-        showToast('Email address copied to clipboard!', 'toast-info');
-      }).catch(() => {
-        showToast('Email: info@smart-solutionbd.com', 'toast-info');
-      });
-    });
-  }
-}
-
-function showToast(message, typeClass = 'toast-info') {
+function showToast(message) {
   const container = document.getElementById('toast-container');
   if (!container) return;
 
   const toast = document.createElement('div');
-  toast.className = `toast ${typeClass}`;
+  toast.className = 'toast';
   toast.innerHTML = `
-    <span class="toast-icon">${typeClass.includes('success') ? '✓' : 'ℹ'}</span>
-    <span class="toast-text">${message}</span>
+    <span style="color:#10b981;font-weight:700;">✓</span>
+    <span>${message}</span>
   `;
 
   container.appendChild(toast);

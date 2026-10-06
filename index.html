@@ -3,364 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Solution BD | System Upgrade & Under Maintenance</title>
-  <meta name="description" content="smart-solutionbd.com is currently undergoing scheduled platform upgrades to introduce our next-generation enterprise IT, cloud solutions, and software services.">
-  <meta name="keywords" content="Smart Solution BD, IT Solutions Bangladesh, Web Development, Cloud VPS, Enterprise Software, Network Infrastructure">
+  <title>Smart Solution BD | Development & Maintenance</title>
+  <meta name="description" content="smart-solutionbd.com is currently under development and scheduled maintenance.">
   <meta name="theme-color" content="#070913">
-  
-  <!-- Open Graph / Meta -->
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://smart-solutionbd.com/">
-  <meta property="og:title" content="Smart Solution BD - Scheduled Upgrade">
-  <meta property="og:description" content="Rebuilding our enterprise digital portal to deliver smarter, faster, and more scalable IT solutions.">
-  <meta property="og:image" content="assets/images/hero-tech.jpg">
+  <meta property="og:title" content="Smart Solution BD | Under Maintenance">
+  <meta property="og:description" content="We are actively upgrading smart-solutionbd.com. Stay tuned!">
 
   <!-- Favicon SVG -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%236366f1'/><stop offset='100%' stop-color='%2306b6d4'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='%230b0f19'/><path d='M30 65 L50 25 L70 65 Z' fill='none' stroke='url(%23g)' stroke-width='8' stroke-linejoin='round'/><circle cx='50' cy='52' r='8' fill='%2306b6d4'/></svg>">
 
-  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <!-- Google Fonts: Plus Jakarta Sans, Space Grotesk & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Canvas Background for dynamic interactive tech particles -->
+  <!-- Interactive Background Canvas -->
   <canvas id="particles-canvas"></canvas>
 
-  <!-- Ambient Glow Blobs -->
+  <!-- Ambient Lighting Glows -->
   <div class="ambient-glow glow-1" aria-hidden="true"></div>
   <div class="ambient-glow glow-2" aria-hidden="true"></div>
   <div class="ambient-glow glow-3" aria-hidden="true"></div>
 
+  <!-- Main Centered Container -->
   <div class="app-wrapper">
-    <!-- Header / Navigation -->
-    <header class="site-header">
-      <div class="brand-container">
-        <div class="brand-logo" id="brand-logo">
-          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
-            <rect width="40" height="40" rx="10" fill="#0f172a" stroke="rgba(99, 102, 241, 0.4)" stroke-width="1.5"/>
-            <path d="M12 28L20 12L28 28H12Z" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linejoin="round"/>
-            <circle cx="20" cy="22" r="3" fill="#06b6d4" />
-            <defs>
-              <linearGradient id="logo-grad" x1="12" y1="12" x2="28" y2="28" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#6366f1" />
-                <stop offset="1" stop-color="#06b6d4" />
-              </linearGradient>
-            </defs>
-          </svg>
+    <main class="maintenance-container">
+      
+      <!-- Brand Logo & Big Heading -->
+      <div class="brand-section">
+        <div class="brand-badge">
+          <span class="badge-dot"></span>
+          <span>SYSTEM UNDER MAINTENANCE</span>
         </div>
-        <div class="brand-text">
-          <span class="brand-name">Smart Solution BD</span>
-          <span class="brand-tag">Next-Gen Enterprise IT</span>
-        </div>
+        <h1 class="brand-title">Smart Solution BD</h1>
+        <p class="brand-subtitle">Our website is currently undergoing scheduled development and maintenance. We are building something great for you!</p>
       </div>
 
-      <div class="header-actions">
-        <div class="system-status-pill" id="system-status-indicator" title="Infrastructure upgrade active">
-          <span class="status-dot"></span>
-          <span class="status-label">Upgrade In Progress</span>
+      <!-- Development & Maintenance Progress Meter -->
+      <section class="progress-section" aria-label="Development Progress">
+        <div class="progress-header">
+          <span class="progress-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            Development & Maintenance Progress
+          </span>
+          <span class="progress-value" id="progress-percent">88%</span>
         </div>
-        <button class="btn btn-secondary contact-modal-trigger" id="btn-open-inquiry">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          <span>Emergency Support</span>
-        </button>
-      </div>
-    </header>
-
-    <!-- Main Content Area -->
-    <main class="main-content">
-      <!-- Hero Section -->
-      <section class="hero-section">
-        <div class="badge-wrapper">
-          <div class="announcement-badge">
-            <span class="badge-icon">⚡</span>
-            <span>Platform Overhaul v2.0 &bull; Refactoring Core Infrastructure</span>
-            <span class="badge-id">#SSR-2026</span>
-          </div>
-        </div>
-
-        <h1 class="hero-title">
-          Something <span class="gradient-text">Exceptional</span> is Being Engineered.
-        </h1>
-
-        <p class="hero-description">
-          We are upgrading <strong>smart-solutionbd.com</strong> to deliver an enterprise-grade digital portal. Our new infrastructure features high-performance cloud hosting, modern custom web solutions, smart business automation, and round-the-clock IT support.
-        </p>
-
-        <!-- System Readiness Bar -->
-        <div class="readiness-card">
-          <div class="readiness-header">
-            <div class="readiness-title">
-              <span class="icon-pulse">⚙️</span>
-              <span>Deployment & Migration Progress</span>
-            </div>
-            <span class="readiness-percent" id="readiness-value">88%</span>
-          </div>
-          <div class="progress-bar-track">
-            <div class="progress-bar-fill" style="width: 88%;">
-              <div class="progress-bar-light"></div>
-            </div>
-          </div>
-          <div class="milestones-grid">
-            <div class="milestone-item done">
-              <span class="milestone-bullet">✓</span>
-              <span>VPS Infrastructure</span>
-            </div>
-            <div class="milestone-item done">
-              <span class="milestone-bullet">✓</span>
-              <span>SSL & Security Shield</span>
-            </div>
-            <div class="milestone-item active">
-              <span class="milestone-bullet">↻</span>
-              <span>Automated CI/CD Pipeline</span>
-            </div>
-            <div class="milestone-item pending">
-              <span class="milestone-bullet">○</span>
-              <span>Global CDN Propagation</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Live Countdown Timer -->
-        <div class="countdown-container">
-          <div class="countdown-label">
-            <span class="clock-icon">⏳</span> Estimated Official Launch Countdown
-          </div>
-          <div class="countdown-grid" id="countdown-timer">
-            <div class="countdown-box">
-              <div class="number-wrapper">
-                <span class="number" id="days">00</span>
-              </div>
-              <span class="unit">Days</span>
-            </div>
-            <span class="colon">:</span>
-            <div class="countdown-box">
-              <div class="number-wrapper">
-                <span class="number" id="hours">00</span>
-              </div>
-              <span class="unit">Hours</span>
-            </div>
-            <span class="colon">:</span>
-            <div class="countdown-box">
-              <div class="number-wrapper">
-                <span class="number" id="minutes">00</span>
-              </div>
-              <span class="unit">Minutes</span>
-            </div>
-            <span class="colon">:</span>
-            <div class="countdown-box accent-box">
-              <div class="number-wrapper">
-                <span class="number" id="seconds">00</span>
-              </div>
-              <span class="unit">Seconds</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Notification Form -->
-        <div class="notify-card" id="notify-card">
-          <div class="notify-content">
-            <h2 class="notify-title">Get Notified When We Go Live</h2>
-            <p class="notify-subtitle">Be the first to access our renewed portal and exclusive launch offerings.</p>
-            <form id="subscribe-form" class="subscribe-form">
-              <div class="input-group">
-                <div class="input-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                </div>
-                <input type="email" id="email-input" placeholder="Enter your business email address..." required autocomplete="email">
-                <button type="submit" class="btn btn-primary" id="subscribe-btn">
-                  <span>Notify Me</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </button>
-              </div>
-              <div class="form-feedback" id="form-feedback" aria-live="polite"></div>
-            </form>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" style="width: 88%;">
+            <div class="progress-bar-light"></div>
           </div>
         </div>
       </section>
 
-      <!-- Visual Feature Banner -->
-      <section class="banner-preview-section">
-        <div class="banner-visual-card">
-          <div class="image-overlay"></div>
-          <img src="assets/images/hero-tech.jpg" alt="Smart Solution BD High-Tech Infrastructure" class="tech-render-img" loading="lazy">
-          <div class="banner-caption">
-            <span class="caption-tag">INFRASTRUCTURE REFACTOR</span>
-            <h3>Engineered for High Availability & Maximum Reliability</h3>
-            <p>Our upcoming platform brings enterprise-grade cloud architecture tailored for growing businesses in Bangladesh.</p>
+      <!-- Countdown Meter -->
+      <section class="countdown-section" aria-label="Launch Countdown">
+        <div class="countdown-label">Estimated Official Launch In</div>
+        <div class="countdown-grid" id="countdown-timer">
+          <div class="countdown-box">
+            <div class="number-wrapper">
+              <span class="number" id="days">00</span>
+            </div>
+            <span class="unit">Days</span>
+          </div>
+          <span class="colon">:</span>
+          <div class="countdown-box">
+            <div class="number-wrapper">
+              <span class="number" id="hours">00</span>
+            </div>
+            <span class="unit">Hours</span>
+          </div>
+          <span class="colon">:</span>
+          <div class="countdown-box">
+            <div class="number-wrapper">
+              <span class="number" id="minutes">00</span>
+            </div>
+            <span class="unit">Minutes</span>
+          </div>
+          <span class="colon">:</span>
+          <div class="countdown-box accent-box">
+            <div class="number-wrapper">
+              <span class="number" id="seconds">00</span>
+            </div>
+            <span class="unit">Seconds</span>
           </div>
         </div>
       </section>
 
-      <!-- Services Capabilities Grid -->
-      <section class="services-preview-section">
-        <div class="section-header">
-          <span class="sub-heading">CORE CAPABILITIES</span>
-          <h2 class="section-title">What Smart Solution BD Delivers</h2>
-          <p class="section-desc">Our dedicated teams provide end-to-end technology solutions to accelerate your enterprise.</p>
-        </div>
-
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon-box cyan">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <h3 class="service-title">Enterprise Software & Web</h3>
-            <p class="service-text">Custom web applications, ERPs, client portals, and responsive websites built with modern performant stacks and clean APIs.</p>
-            <div class="service-tag">Web &bull; Mobile &bull; Cloud SaaS</div>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon-box indigo">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-            </div>
-            <h3 class="service-title">Cloud Infrastructure & VPS</h3>
-            <p class="service-text">High-performance virtual servers, cPanel/Linux management, server migration, and 99.9% uptime uptime optimization.</p>
-            <div class="service-tag">VPS &bull; cPanel &bull; CI/CD Pipelines</div>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon-box purple">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3 class="service-title">Smart Security & IoT</h3>
-            <p class="service-text">Access control systems, corporate surveillance, network firewall configuration, and automated security auditing.</p>
-            <div class="service-tag">Surveillance &bull; Biometrics &bull; Networks</div>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon-box emerald">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <h3 class="service-title">Managed IT & Corporate Support</h3>
-            <p class="service-text">Proactive 24/7 IT desk, network troubleshooting, database backups, and tailored IT consulting for business growth.</p>
-            <div class="service-tag">SLA Support &bull; DevOps &bull; Consultation</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Urgent Contact / Direct Access Section -->
-      <section class="urgent-contact-section">
-        <div class="contact-card">
-          <div class="contact-header">
-            <h2>Need Immediate IT Support or Have a Project Inquiry?</h2>
-            <p>Our engineering and consultation team remains active and available during this maintenance cycle.</p>
-          </div>
-
-          <div class="contact-options-grid">
-            <!-- Email -->
-            <div class="contact-option-box">
-              <div class="contact-icon-wrapper">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <!-- Get Notify Section -->
+      <section class="notify-section" aria-label="Notification Subscription">
+        <div class="notify-card">
+          <h2 class="notify-title">Get Notified When We Go Live</h2>
+          <p class="notify-subtitle">Drop your email to receive an instant alert as soon as our platform launches.</p>
+          <form id="subscribe-form" class="subscribe-form">
+            <div class="input-group">
+              <div class="input-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </div>
-              <div class="contact-info">
-                <span class="info-label">Direct Email</span>
-                <span class="info-val" id="email-text">info@smart-solutionbd.com</span>
-              </div>
-              <button class="btn btn-icon-copy" id="btn-copy-email" title="Copy Email">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <input type="email" id="email-input" placeholder="Enter your email address..." required autocomplete="email">
+              <button type="submit" class="btn btn-primary" id="subscribe-btn">
+                <span>Notify Me</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </button>
             </div>
-
-            <!-- WhatsApp -->
-            <a href="https://wa.me/8801700000000?text=Hello%20Smart%20Solution%20BD%2C%20I%20have%20an%20urgent%20inquiry." target="_blank" rel="noopener noreferrer" class="contact-option-box clickable">
-              <div class="contact-icon-wrapper whatsapp">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-              </div>
-              <div class="contact-info">
-                <span class="info-label">Live WhatsApp Chat</span>
-                <span class="info-val">+880 1700-000000</span>
-              </div>
-              <span class="arrow-indicator">&rarr;</span>
-            </a>
-
-            <!-- Quick Inquiry Modal Launcher -->
-            <div class="contact-option-box clickable" id="launch-inquiry-box">
-              <div class="contact-icon-wrapper purple">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              </div>
-              <div class="contact-info">
-                <span class="info-label">Client Dispatch</span>
-                <span class="info-val">Send Quick Message</span>
-              </div>
-              <span class="arrow-indicator">&rarr;</span>
-            </div>
-          </div>
+            <div class="form-feedback" id="form-feedback" aria-live="polite"></div>
+          </form>
         </div>
       </section>
+
     </main>
 
-    <!-- Footer -->
+    <!-- Direct Footer Section -->
     <footer class="site-footer">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <span class="footer-brand-title">Smart Solution BD</span>
-          <p class="footer-brand-sub">Empowering Bangladesh's businesses with smart digital infrastructure & scalable software solutions.</p>
-        </div>
-        <div class="footer-meta">
-          <div class="server-time-box">
-            <span class="time-label">Dhaka Server Time (BST):</span>
-            <span class="time-value" id="live-server-clock">--:--:--</span>
-          </div>
-          <div class="pipeline-badge">
-            <span class="pipeline-dot"></span>
-            <span>Automated CI/CD Ready</span>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Smart Solution BD (<a href="https://smart-solutionbd.com">smart-solutionbd.com</a>). All rights reserved.</p>
-        <div class="footer-links">
-          <span>Dhaka, Bangladesh</span>
-          <span class="sep">&bull;</span>
-          <a href="mailto:info@smart-solutionbd.com">info@smart-solutionbd.com</a>
-        </div>
-      </div>
+      <p>&copy; 2026 Smart Solution BD (<a href="https://smart-solutionbd.com/" target="_blank" rel="noopener">smart-solutionbd.com</a>). All rights reserved. Designed by myLearningX.</p>
     </footer>
-  </div>
-
-  <!-- Inquiry Modal -->
-  <div class="modal-backdrop" id="inquiry-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-heading">
-    <div class="modal-card">
-      <button class="modal-close-btn" id="modal-close" aria-label="Close dialog">&times;</button>
-      <div class="modal-header">
-        <div class="modal-icon">📨</div>
-        <div>
-          <h3 id="modal-heading" class="modal-title">Emergency & Project Inquiry</h3>
-          <p class="modal-desc">Leave your message and our technical team will contact you within 2 hours.</p>
-        </div>
-      </div>
-      <form id="inquiry-form" class="modal-form">
-        <div class="form-row">
-          <label for="inq-name">Your Full Name</label>
-          <input type="text" id="inq-name" required placeholder="e.g. Tanvir Ahmed">
-        </div>
-        <div class="form-row">
-          <label for="inq-phone">Contact Number / WhatsApp</label>
-          <input type="tel" id="inq-phone" required placeholder="e.g. +880 1712-345678">
-        </div>
-        <div class="form-row">
-          <label for="inq-subject">Service Required</label>
-          <select id="inq-subject" required>
-            <option value="Web Development & Software">Web Development & Custom Software</option>
-            <option value="Cloud VPS & cPanel Hosting">Cloud VPS & cPanel Hosting Setup</option>
-            <option value="Smart Security & Automation">Smart Security & Surveillance</option>
-            <option value="Emergency Server Issue">Emergency Server / IT Assistance</option>
-            <option value="Other">Other Inquiry</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="inq-message">Message Details</label>
-          <textarea id="inq-message" rows="3" required placeholder="Briefly describe what you need..."></textarea>
-        </div>
-        <div class="modal-actions">
-          <button type="button" class="btn btn-secondary" id="modal-cancel">Cancel</button>
-          <button type="submit" class="btn btn-primary" id="modal-submit-btn">Send Inquiry</button>
-        </div>
-      </form>
-    </div>
   </div>
 
   <!-- Toast Notification Container -->
