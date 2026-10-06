@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    # Adjust username below to match your actual cPanel username (e.g. /home/yourcpaneluser/public_html/)
+    - export DEPLOYPATH=/home/$USER/public_html/
+    - /bin/cp -R * $DEPLOYPATH
